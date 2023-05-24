@@ -1,6 +1,8 @@
 package com.daghlas.myvideostreamer;
 
-public class VideoModel {
+import java.io.Serializable;
+
+public class VideoModel implements Serializable {
 
     String title;
     String description;
