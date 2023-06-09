@@ -19,8 +19,8 @@ import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder> {
 
-    private List<VideoModel> allVideos;
-    private Context context;
+    private final List<VideoModel> allVideos;
+    private final Context context;
 
     public VideoAdapter(Context context, List<VideoModel> videoModels){
         this.allVideos = videoModels;
