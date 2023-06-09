@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
@@ -42,12 +41,9 @@ public class Player extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
 
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                videoView.start();
-                progressBar.setVisibility(View.GONE);
-            }
+        videoView.setOnPreparedListener(mp -> {
+            videoView.start();
+            progressBar.setVisibility(View.GONE);
         });
 
 
