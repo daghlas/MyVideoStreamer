@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getJsonData() {
         String url = "https://raw.githubusercontent.com/daghlas/MyStreamer/main/data.json";
-        //String url = "https://raw.githubusercontent.com/bikashthapa01/myvideos-android-app/master/data.json";
         //requestQueue
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         @SuppressLint("NotifyDataSetChanged")
