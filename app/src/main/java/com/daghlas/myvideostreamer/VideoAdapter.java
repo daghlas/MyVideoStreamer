@@ -39,16 +39,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
         holder.title.setText(allVideos.get(position).getTitle());
         Picasso.get().load(allVideos.get(position).getImageUri()).into(holder.imageView);
 
-        holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("videoData", allVideos.get(position));
-                //v.getContext().startActivity(new Intent(context, Player.class));
-                Intent intent = new Intent(context, Player.class);
-                intent.putExtras(bundle);
-                v.getContext().startActivity(intent);
-            }
+        holder.view.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("videoData", allVideos.get(position));
+            //v.getContext().startActivity(new Intent(context, Player.class));
+            Intent intent = new Intent(context, Player.class);
+            intent.putExtras(bundle);
+            v.getContext().startActivity(intent);
         });
 
     }
